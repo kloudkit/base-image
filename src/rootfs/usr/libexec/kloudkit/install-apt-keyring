@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+  echo "Usage:"
+  echo "  $0 -f <file>"
+  echo "  $0 <name> <url>"
+  exit 1
+}
+
+download_key() {
+  local name=$1
+  local url=$2
+
+  curl -fsSL "https://${url}" | gpg --dearmor -o "/etc/apt/keyrings/${name}.gpg"
+}
+
+if [[ $# -eq 0 ]]; then
+  usage
+fi
+
+if [[ $1 == "-f" ]]; then
+  [[ $# -ne 2 ]] && usage
+
+  file=$2
+
+  while IFS= read -r line; do
+    read -r name url <<< "${line}"
+    download_key "$name" "$url"
+  done < "$file"
+elif [[ $# -eq 2 ]]; then
+  name=$1
+  url=$2
+
+  download_key "$name" "$url"
+else
+  usage
+fi
+
+chmod a+r /etc/apt/keyrings/*.gpg
