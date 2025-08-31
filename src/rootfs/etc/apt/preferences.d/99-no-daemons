@@ -1,4 +1,0 @@
-Package:      postfix* exim4* sendmail* ssmtp mailutils* mutt* cron rsyslog \
-              logrotate syslog-ng* anacron at
-Pin:          release *
-Pin-Priority: -1

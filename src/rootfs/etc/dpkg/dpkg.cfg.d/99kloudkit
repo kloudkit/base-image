@@ -1,23 +1,35 @@
-# Docs & info pages
+# Pre-compiled Python bytecode (re-created at runtime if needed)
+path-exclude=**/*.pyc
+
+# System directories
+path-exclude=/lib/systemd/system/*
+path-exclude=/usr/lib/systemd/system/*
+path-exclude=/usr/lib/tmpfiles.d/*
+path-exclude=/var/cache/debconf/*
+
+# Documentation & info pages
 path-exclude=/usr/share/bash-completion/*
 path-exclude=/usr/share/bug/*
 path-exclude=/usr/share/doc/*
 path-exclude=/usr/share/doc-base/*
-path-exclude=/usr/share/fonts/X11/*
 path-exclude=/usr/share/help/*
 path-exclude=/usr/share/info/*
 path-exclude=/usr/share/lintian/*
-path-exclude=/usr/share/locale/*
-path-exclude=/usr/share/locale-langpack/*
 path-exclude=/usr/share/man/*
 
-# Icons, themes & GTK docs (CLI-only images)
-path-exclude=/usr/share/icons/*
-path-exclude=/usr/share/themes/*
-path-exclude=/usr/share/gtk-doc/*
+# Localization
+path-exclude=/usr/share/locale/*
+path-exclude=/usr/share/locale-langpack/*
 
-# Pre-compiled Python bytecode (re-created at runtime if needed)
-path-exclude=**/*.pyc
+# GUI resources (CLI-only images)
+path-exclude=/usr/share/applications/*
+path-exclude=/usr/share/fonts/X11/*
+path-exclude=/usr/share/gtk-doc/*
+path-exclude=/usr/share/icons/*
+path-exclude=/usr/share/mime/*
+path-exclude=/usr/share/pixmaps/*
+path-exclude=/usr/share/themes/*
+path-exclude=/usr/share/zoneinfo/*
 
 # Keep only the generic (C/English) files
 path-include=/usr/share/doc/*/copyright

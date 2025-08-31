@@ -26,7 +26,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     "unzip (>=6.0)" \
     "wget (>=1.21)" \
     "zsh (>=5.9)" \
-  && rm -rf /var/lib/apt/lists/*
+  && /usr/libexec/kloudkit/apt-cleanup
 
 ### Add docker group and application user
 RUN groupadd \

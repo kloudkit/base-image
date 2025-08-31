@@ -1,0 +1,3 @@
+Package:      bluetooth avahi-daemon network-manager* wireless-*
+Pin:          release *
+Pin-Priority: -1

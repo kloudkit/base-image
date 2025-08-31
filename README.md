@@ -14,11 +14,49 @@
 docker pull ghcr.io/kloudkit/base-image:latest
 ```
 
-Use it as the first `FROM` in any Kloudkit-compatible Dockerfile:
+Use it as the first `FROM` in any KloudKIT-compatible Dockerfile:
 
 ```dockerfile
 FROM ghcr.io/kloudkit/base-image:latest
 # …install your app here…
+```
+
+## What's Inside
+
+This ultra-minimal base layer provides:
+
+- **Size-optimized Debian** with aggressive cleanup configurations.
+- **Essential tools** like `curl`, `wget`, `gnupg`, and `unzip` pre-installed.
+- **Smart package management** that blocks unnecessary services by default.
+- **Multi-version support** with opt-in access to newer Debian releases.
+- **Security hardening** with sensible defaults for container environments.
+- **User setup** with a non-root `kloud` user ready for your applications.
+
+## Why Use This Base
+
+- **Smaller images:** Extensive file exclusions and package filtering reduce bloat.
+- **Faster builds:**Common tools pre-installed, optimized APT configuration.
+- **Consistent foundation:** All KloudKIT projects start from the same reliable base.
+- **Flexible packaging:** Access to both stable and testing repositories when needed.
+- **Production ready:** Battle-tested configurations used across KloudKIT infrastructure.
+
+## Getting Started
+
+The base image includes everything needed for most containerized applications.
+Simply extend it with your application-specific requirements:
+
+```dockerfile
+FROM ghcr.io/kloudkit/base-image:latest
+
+# Install your application dependencies
+RUN apt-get update && apt-get install -y your-packages
+
+# Copy and configure your application
+COPY . /app
+WORKDIR /app
+
+# Switch to non-root user
+USER kloud
 ```
 
 ## License

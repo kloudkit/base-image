@@ -1,6 +1,7 @@
 APT::Keep-Downloaded-Packages "false";
 
 APT::Install-Recommends "false";
+APT::Install-Suggests "false";
 
 Dpkg::Options {
   "--force-confdef";
@@ -8,3 +9,6 @@ Dpkg::Options {
 }
 
 Acquire::Languages "none";
+
+Dir::Cache::srcpkgcache "";
+Dir::Cache::pkgcache "";

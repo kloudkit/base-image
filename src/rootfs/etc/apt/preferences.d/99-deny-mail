@@ -1,0 +1,3 @@
+Package:      postfix* exim4* sendmail* ssmtp mailutils* mutt*
+Pin:          release *
+Pin-Priority: -1
