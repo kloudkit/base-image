@@ -1,4 +1,4 @@
-ARG tag=12.11
+ARG tag=12.12
 
 ################################## Base Layer ##################################
 
@@ -16,16 +16,17 @@ COPY src/rootfs /
 ### Install helper requirements
 RUN DEBIAN_FRONTEND=noninteractive \
   apt-get update \
-  && apt-get satisfy -y --no-install-recommends \
-    "locales" \
+  && apt-get install -y --no-install-recommends \
+    locales \
   && locale-gen \
-  && apt-get satisfy -y --no-install-recommends \
-    "ca-certificates (>=20230311)" \
-    "curl (>=7.88)" \
-    "gnupg (>=2.2)" \
-    "unzip (>=6.0)" \
-    "wget (>=1.21)" \
-    "zsh (>=5.9)" \
+  && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    gnupg \
+    unzip \
+    wget \
+    xz-utils \
+    zsh \
   && /usr/libexec/kloudkit/apt-cleanup
 
 ### Add docker group and application user
