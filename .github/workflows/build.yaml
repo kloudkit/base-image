@@ -28,10 +28,10 @@ jobs:
       matrix:
         variant:
           - name: bookworm
-            tag: 12.12
+            tag: 12.13
             latest: true
           - name: trixie
-            tag: 13.2
+            tag: 13.3
             latest: false
 
     permissions:
