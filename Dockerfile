@@ -1,4 +1,4 @@
-ARG tag=12.12
+ARG tag=12.13
 
 ################################## Base Layer ##################################
 
@@ -8,8 +8,6 @@ SHELL ["/bin/bash", "-Eeuo", "pipefail", "-c"]
 ENV LANGUAGE=en_US:en
 ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
-
-RUN mkdir -p /etc/apt/keyrings
 
 COPY src/rootfs /
 
