@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^\\.github/workflows/build\\.yaml$"],
+      "matchStrings": ["tag:\\s*(?<currentValue>\\d+\\.\\d+)"],
+      "depNameTemplate": "debian",
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["^README\\.md$"],
+      "matchStrings": ["(?<currentValue>v\\d+\\.\\d+\\.\\d+)"],
+      "depNameTemplate": "ghcr.io/kloudkit/base-image",
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
