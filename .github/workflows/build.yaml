@@ -28,7 +28,7 @@ jobs:
       matrix:
         variant:
           - name: bookworm
-            tag: 12.13
+            tag: 13.4
             latest: true
           - name: trixie
             tag: 13.4
