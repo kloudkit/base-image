@@ -24,16 +24,6 @@ jobs:
     needs:
       - lint
 
-    strategy:
-      matrix:
-        variant:
-          - name: bookworm
-            tag: 12.13
-            latest: true
-          - name: trixie
-            tag: 13.4
-            latest: false
-
     permissions:
       contents: read
       packages: write
@@ -60,12 +50,10 @@ jobs:
           flavor: |
             latest=false
           tags: |
-            type=raw,value=latest,enable=${{ matrix.variant.latest }}
-            type=raw,value=${{ matrix.variant.name }}
-            type=semver,pattern=v{{version}},enable=${{ matrix.variant.latest }}
-            type=semver,pattern=v{{major}}.{{minor}},enable=${{ matrix.variant.latest }}
-            type=semver,pattern=v{{version}}-${{ matrix.variant.name }}
-            type=semver,pattern=v{{major}}.{{minor}}-${{ matrix.variant.name }}
+            type=raw,value=latest
+            type=raw,value=trixie
+            type=semver,pattern=v{{version}}
+            type=semver,pattern=v{{major}}.{{minor}}
 
       - name: 🐳 Docker Build & Push
         uses: docker/build-push-action@v6
@@ -74,7 +62,7 @@ jobs:
           DOCKER_BUILD_SUMMARY: true
         with:
           build-args: |
-            tag=${{ matrix.variant.tag }}
+            tag=13.4
           cache-from: type=gha
           cache-to: type=gha,mode=max
           context: .

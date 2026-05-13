@@ -10,12 +10,8 @@
 ---
 
 ```sh
-# TL;DR  🐳 grab the latest layer (Bookworm by default)
+# TL;DR  🐳 grab the latest layer (Debian 13 / Trixie)
 docker pull ghcr.io/kloudkit/base-image:latest
-
-# Or choose a specific Debian version
-docker pull ghcr.io/kloudkit/base-image:bookworm  # Debian 12
-docker pull ghcr.io/kloudkit/base-image:trixie    # Debian 13
 ```
 
 Use it as the first `FROM` in any KloudKIT-compatible Dockerfile:
@@ -23,9 +19,6 @@ Use it as the first `FROM` in any KloudKIT-compatible Dockerfile:
 ```dockerfile
 FROM ghcr.io/kloudkit/base-image:latest
 # …install your app here…
-
-# Or target a specific version
-FROM ghcr.io/kloudkit/base-image:bookworm
 ```
 
 ## What's Inside
@@ -35,7 +28,6 @@ This ultra-minimal base layer provides:
 - **Size-optimized Debian** with aggressive cleanup configurations.
 - **Essential tools** like `curl`, `wget`, `gnupg`, and `unzip` pre-installed.
 - **Smart package management** that blocks unnecessary services by default.
-- **Multiple Debian versions** with dedicated Bookworm and Trixie variants.
 - **Multi-architecture support** with ARM64 and AMD64 builds for broad compatibility.
 - **Security hardening** with sensible defaults for container environments.
 - **User setup** with a non-root `kloud` user ready for your applications.
@@ -45,22 +37,16 @@ This ultra-minimal base layer provides:
 - **Smaller images:** Extensive file exclusions and package filtering reduce bloat.
 - **Faster builds:** Common tools pre-installed, optimized APT configuration.
 - **Consistent foundation:** All KloudKIT projects start from the same reliable base.
-- **Version flexibility:** Choose between stable Bookworm or newer Trixie variants.
 - **Production ready:** Battle-tested configurations used across KloudKIT infrastructure.
 
 ## Available Tags
 
-| Tag               | Debian Version  | Description                            |
-| ----------------- | --------------- | -------------------------------------- |
-| `latest`          | 12 *(Bookworm)* | Default, stable release                |
-| `bookworm`        | 12 *(Bookworm)* | Explicit stable version                |
-| `trixie`          | 13 *(Trixie)*   | Testing release with newer packages    |
-| `v0.0.8`          | 12 *(Bookworm)* | Versioned stable release (latest)      |
-| `v0.0`            | 12 *(Bookworm)* | Major.minor versioned release (latest) |
-| `v0.0.8-bookworm` | 12 *(Bookworm)* | Versioned Bookworm variant             |
-| `v0.0.8-trixie`   | 13 *(Trixie)*   | Versioned Trixie variant               |
-| `v0.0-bookworm`   | 12 *(Bookworm)* | Major.minor Bookworm variant           |
-| `v0.0-trixie`     | 13 *(Trixie)*   | Major.minor Trixie variant             |
+| Tag      | Description                   |
+| -------- | ----------------------------- |
+| `latest` | Default, latest release       |
+| `trixie` | Explicit codename             |
+| `v0.0.8` | Versioned release             |
+| `v0.0`   | Major.minor versioned release |
 
 ## Getting Started
 
