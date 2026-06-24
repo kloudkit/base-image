@@ -61,8 +61,6 @@ jobs:
         env:
           DOCKER_BUILD_SUMMARY: true
         with:
-          build-args: |
-            tag=13.4
           cache-from: type=gha
           cache-to: type=gha,mode=max
           context: .
