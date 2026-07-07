@@ -3,7 +3,7 @@
 > 📦 **Minimal Debian layer** that underpins *every* KloudKIT container
 
 [![Stars](https://img.shields.io/github/stars/kloudkit/base-image?style=for-the-badge&logo=git&logoColor=c6d0f5&labelColor=414559&color=f0c6c6)](https://github.com/kloudkit/base-image/stargazers)
-[![Docker](https://img.shields.io/badge/v0.1.2-a?style=for-the-badge&logo=docker&logoColor=c6d0f5&label=docker&labelColor=414559&color=ef9f76)](https://github.com/kloudkit/base-image/pkgs/container/base-image)
+[![Docker](https://img.shields.io/badge/v0.1.3-a?style=for-the-badge&logo=docker&logoColor=c6d0f5&label=docker&labelColor=414559&color=ef9f76)](https://github.com/kloudkit/base-image/pkgs/container/base-image)
 [![Build](https://img.shields.io/github/actions/workflow/status/kloudkit/base-image/build.yaml?style=for-the-badge&logo=githubactions&logoColor=c6d0f5&label=build&labelColor=414559&color=a6da95)](https://github.com/kloudkit/base-image/actions/workflows/build.yaml)
 [![License](https://img.shields.io/github/license/kloudkit/base-image?style=for-the-badge&logo=opensourceinitiative&logoColor=c6d0f5&labelColor=414559&color=8caaee)](https://github.com/kloudkit/base-image/blob/main/LICENSE)
 
@@ -45,7 +45,7 @@ This ultra-minimal base layer provides:
 | -------- | ----------------------------- |
 | `latest` | Default, latest release       |
 | `trixie` | Explicit codename             |
-| `v0.1.2` | Versioned release             |
+| `v0.1.3` | Versioned release             |
 | `v0.1`   | Major.minor versioned release |
 
 ## Getting Started
