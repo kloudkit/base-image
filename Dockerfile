@@ -33,7 +33,6 @@ RUN groupadd \
     docker \
   && adduser \
     --disabled-password \
-    --no-create-home \
     --gecos '' \
     --shell /usr/bin/zsh \
     --uid 1000 \
