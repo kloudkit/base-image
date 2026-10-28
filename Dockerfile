@@ -20,6 +20,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
   && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
+    file \
     gnupg \
     unzip \
     wget \
