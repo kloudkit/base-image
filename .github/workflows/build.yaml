@@ -28,7 +28,7 @@ jobs:
       id-token: write
       packages: write
 
-    uses: docker/github-builder/.github/workflows/build.yml@v1.18.1
+    uses: docker/github-builder/.github/workflows/build.yml@v1.20.0
     with:
       output: image
       push: true
